@@ -10,8 +10,8 @@
         option}}
     </button>
   </div>
-  <div v-else>
-    <p>Loading options...</p>
+  <div v-if="!currentQuestion.options || currentQuestion.options.length === 0">
+    <p >Loading options...</p>
   </div>
 </template>
 
@@ -24,8 +24,6 @@ const currentQuestion = computed(() => store.getters.currentQuestion);
 
 console.log("My question "+JSON.stringify(currentQuestion.value))
 const submitAnswer = (isCorrect,correctAnswer) => {
-  console.log("Solution "+isCorrect)
-  console.log("Solution Correct "+correctAnswer)
   let isRight = false
   if(correctAnswer===isCorrect){
     isRight=true;
