@@ -1,0 +1,131 @@
+@import './base.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Body Styles */
+body {
+  background: url('../assets/star-background.svg') no-repeat center center fixed; /* Background image */
+  background-size: cover; /* Ensure the background image covers the viewport */
+  margin: 0; /* Remove default margin */
+  height: 100vh; /* Full viewport height */
+}
+
+/* General App Styles */
+#app {
+  background: url('../assets/star-background.svg') no-repeat center center fixed; /* Background image */
+  background-size: cover; /* Ensure the background image covers the viewport */
+
+  max-width: 1280px; /* Maximum width for larger screens */
+  width: 100%; /* Full width */
+  height: 100vh; /* Full viewport height */
+  margin: 0 auto; /* Center horizontally */
+  padding: 2rem; /* Padding for inner spacing */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  box-sizing: border-box; /* Include padding in width and height calculations */
+}
+
+/* Dark Text Color */
+.text-dark {
+  color: #000000 !important; /* Pure black */
+}
+
+/* Link and Green Text Styles */
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: background-color 0.4s; /* Smooth background color transition */
+  padding: 3px;
+}
+
+/* Link Hover Effect */
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  #app {
+    padding: 1rem; /* Reduce padding on smaller screens */
+    min-height: 90vh; /* Adjust minimum height on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  #app {
+    padding: 0.5rem; /* Further reduce padding on small screens */
+    min-height: 95vh; /* Further adjust minimum height on small screens */
+  }
+}
+/* General Styles for Cards */
+/* General Styles for Cards */
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom Styles for QuestionDisplay Card */
+.card-question {
+  min-height: 150px;
+  max-height: 200px;
+  overflow: auto;
+}
+
+/* Custom Styles for Timer, AnswerOptions, and GameControls Cards */
+.card-timer,
+.card-answer,
+.card-controls {
+  min-height: 150px;
+  max-height: 300px;
+  overflow: auto;
+}
+
+/* Specific Styles for AnswerOptions Card */
+.card-answer {
+  min-width: 300px; /* Minimum width to ensure it doesn't get too narrow */
+  max-width: 100%; /* Allow it to grow within its container */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .card-question,
+  .card-timer,
+  .card-answer,
+  .card-controls {
+    min-height: 120px;
+    max-height: 250px;
+  }
+
+  .card-answer {
+    min-width: 300px; /* Adjust minimum width for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 0.5rem;
+  }
+
+  .card-question,
+  .card-timer,
+  .card-answer,
+  .card-controls {
+    min-height: 100px;
+    max-height: 180px;
+  }
+
+  .card-answer {
+    min-width: 200px; /* Further adjust minimum width for small screens */
+  }
+}
